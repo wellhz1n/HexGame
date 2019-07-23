@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
         if (collision.name == "hex(Clone)")
         {
-            PlayerPrefs.SetInt("Score", Global.Score);
+            
 
             Global.Mostrar(Menu.gameover);
             Global.Stop(Menu.gameover);

@@ -69,15 +69,15 @@ public class Menu : MonoBehaviour
          
         Time.timeScale = 1;
         Global.paused = false;
-        if (PlayerPrefs.GetInt("Score") > 0)
+        if (Global.Score > 0)
         {
-            SaveClass.Money += PlayerPrefs.GetInt("Score");
+            SaveClass.Money += Global.Score;
             SaveMoney.SaveMoneys();
 
         }
-        if (SaveClass.BestScore < PlayerPrefs.GetInt("Score"))
+        if (SaveClass.BestScore < Global.Score)
         {
-            SaveClass.BestScore = PlayerPrefs.GetInt("Score");
+            SaveClass.BestScore = Global.Score;
             Save.SaveBestScore();
         }
         Global.Score = 0;
