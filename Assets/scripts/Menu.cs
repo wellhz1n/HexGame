@@ -18,6 +18,7 @@ public class Menu : MonoBehaviour
 
     public TextMeshProUGUI Bestscore;
     public TextMeshProUGUI Money;
+    public TextMeshProUGUI MoneyLoja;
     public AudioSource a;
 
     // Start is called before the first frame update
@@ -37,15 +38,13 @@ public class Menu : MonoBehaviour
             Debug.Log("Sem Best TExt");
         }
         if (Money != null)
-        {
-
-
             Money.text = SaveClass.Money.ToString();
-        }
         else
-        {
             Debug.Log("Sem  Dinheiro Text");
-        }
+        if (MoneyLoja != null)
+            MoneyLoja.text = SaveClass.Money.ToString();
+        else
+            Debug.Log("Sem  Dinheiro Text");
 
         Global.a = a;
         g = GameObject.FindGameObjectsWithTag("Pause");
@@ -61,12 +60,12 @@ public class Menu : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        
+
         SceneManager.LoadSceneAsync(fase);
     }
-    public  void DesCarregaFase(string unload)
+    public void DesCarregaFase(string unload)
     {
-         
+
         Time.timeScale = 1;
         Global.paused = false;
         if (Global.Score > 0)
@@ -93,7 +92,7 @@ public class Menu : MonoBehaviour
     {
         Global.Esconder(Shop);
     }
-    public  void Pausar()
+    public void Pausar()
     {
         a.Pause();
         Debug.Log("Clicou");
@@ -103,7 +102,7 @@ public class Menu : MonoBehaviour
 
 
     }
-    public  void DesPausar()
+    public void DesPausar()
     {
         a.UnPause();
         Time.timeScale = 1;
@@ -115,7 +114,7 @@ public class Menu : MonoBehaviour
 
     }
 
-   
+
 
     // Update is called once per frame
     void Update()
