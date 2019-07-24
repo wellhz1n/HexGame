@@ -16,7 +16,7 @@ public class GameOver : MonoBehaviour
 
         score.text = Global.Score.ToString();
         hscore.text = Global.Bestscr < Global.Score ? Global.Score.ToString() : Global.Bestscr.ToString();
-        money.text = (Global.Dinheiro += Global.Score).ToString();
+        money.text = (Global.Dinheiro + Global.Score).ToString();
 
     }
 
@@ -25,7 +25,7 @@ public class GameOver : MonoBehaviour
     {
         score.text = Global.Score.ToString();
         hscore.text = Global.Bestscr < Global.Score ? Global.Score.ToString() : Global.Bestscr.ToString();
-        money.text = (Global.Dinheiro += Global.Score).ToString();
+        money.text = (Global.Dinheiro + Global.Score).ToString();
 
 
     }

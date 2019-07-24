@@ -12,6 +12,7 @@ public  class Global
     public  static int Dinheiro = 0; 
     public  int BestScore = 0;
     public  int Money = 0;
+    public static int currentmusicGame;
 
     public static void Mostrar(GameObject[] c)
     {

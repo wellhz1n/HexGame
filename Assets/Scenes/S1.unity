@@ -2858,6 +2858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1888029156}
   - component: {fileID: 1888029155}
+  - component: {fileID: 1888029157}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -2880,7 +2881,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.23
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2976,6 +2977,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1888029157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888029154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529adb4712983064f8882cb57f3b83ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 8300000, guid: 83e98c9e6d18ee543b398c67f1d0ccf1, type: 3}
+  - {fileID: 8300000, guid: aaf17e083e1dd71449d61b5bfb64551d, type: 3}
+  - {fileID: 8300000, guid: c13c228a9112f1e449ee69dc25dc69fb, type: 3}
+  - {fileID: 8300000, guid: 75ef43106f2f4ba409e3e8721a8efcd4, type: 3}
+  - {fileID: 8300000, guid: 2de3646b815d9434496b266def84b702, type: 3}
+  - {fileID: 8300000, guid: 2bf0116fe1883f54e9b68048f9571c43, type: 3}
+  current: 0
 --- !u!1 &1890789825
 GameObject:
   m_ObjectHideFlags: 0
