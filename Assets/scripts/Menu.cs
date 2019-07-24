@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 
 using UnityEngine;
@@ -11,10 +12,11 @@ public class Menu : MonoBehaviour
 
 
 
-
+    Global glob;
     GameObject[] g;
     public static GameObject[] gameover;
     GameObject[] Shop;
+    SaveClass best;
 
     public TextMeshProUGUI Bestscore;
     public TextMeshProUGUI Money;
@@ -25,37 +27,47 @@ public class Menu : MonoBehaviour
     void Start()
     {
 
-        Save.LoadBestScore();
-        SaveMoney.LoadMoney();
+        Global.a = a;
+        g = GameObject.FindGameObjectsWithTag("Pause");
+        Shop = GameObject.FindGameObjectsWithTag("Shop");
+        gameover = GameObject.FindGameObjectsWithTag("GameOver");
+        Global.Esconder(gameover);
+        Global.Esconder(Shop);
+        Global.Esconder(g);
+        CarregaConf();
+    }
+
+    private void CarregaConf()
+    {
+        glob = new Global();
+        best = Save.LoadGame<SaveClass>("Gamesettings");
+        glob.BestScore = best.BestScore;
+        glob.Money = best.Money;
+        Global.Bestscr = glob.BestScore;
+        Global.Dinheiro = glob.Money;
         if (Bestscore != null)
         {
 
 
-            Bestscore.text = SaveClass.BestScore.ToString();
+            Bestscore.text = Global.Bestscr.ToString();
         }
         else
         {
             Debug.Log("Sem Best TExt");
         }
         if (Money != null)
-            Money.text = SaveClass.Money.ToString();
+            Money.text = Global.Dinheiro.ToString();
         else
             Debug.Log("Sem  Dinheiro Text");
         if (MoneyLoja != null)
-            MoneyLoja.text = SaveClass.Money.ToString();
+            MoneyLoja.text = Global.Dinheiro.ToString();
         else
             Debug.Log("Sem  Dinheiro Text");
 
-        Global.a = a;
-        g = GameObject.FindGameObjectsWithTag("Pause");
-        Shop = GameObject.FindGameObjectsWithTag("Shop");
 
-        gameover = GameObject.FindGameObjectsWithTag("GameOver");
-        Global.Esconder(gameover);
-        Global.Esconder(Shop);
-
-        Global.Esconder(g);
+        
     }
+
     public void CarregaFase(string fase)
     {
         Time.timeScale = 1;
@@ -65,19 +77,23 @@ public class Menu : MonoBehaviour
     }
     public void DesCarregaFase(string unload)
     {
-
         Time.timeScale = 1;
         Global.paused = false;
         if (Global.Score > 0)
         {
-            SaveClass.Money += Global.Score;
-            SaveMoney.SaveMoneys();
+            Global.Dinheiro += Global.Score;
+            glob.Money = Global.Dinheiro;
 
-        }
-        if (SaveClass.BestScore < Global.Score)
-        {
-            SaveClass.BestScore = Global.Score;
-            Save.SaveBestScore();
+            if (Global.Bestscr < Global.Score)
+            {
+                Global.Bestscr = Global.Score;
+
+            }
+            glob.BestScore = Global.Bestscr;
+            glob.Money = Global.Dinheiro;
+            best = new SaveClass(glob);
+            Save.SaveGame(best, "Gamesettings");
+
         }
         Global.Score = 0;
         Resources.UnloadUnusedAssets();

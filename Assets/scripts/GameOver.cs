@@ -11,10 +11,10 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
         score.text = Global.Score.ToString();
-        hscore.text = SaveClass.BestScore < Global.Score ? Global.Score.ToString(): SaveClass.BestScore.ToString();
+        hscore.text = Global.Bestscr < Global.Score ? Global.Score.ToString() : Global.Bestscr.ToString();
 
     }
 
@@ -23,7 +23,8 @@ public class GameOver : MonoBehaviour
     {
         score.text = Global.Score.ToString();
 
-        hscore.text = SaveClass.BestScore < Global.Score ? Global.Score.ToString() : SaveClass.BestScore.ToString();
+        hscore.text = Global.Bestscr < Global.Score ? Global.Score.ToString() : Global.Bestscr.ToString();
+
 
     }
 }

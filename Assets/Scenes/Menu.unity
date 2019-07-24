@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 599015810}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1513,6 +1513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bestscore: {fileID: 1553507155}
   Money: {fileID: 1996233685}
+  MoneyLoja: {fileID: 1790939159}
   a: {fileID: 0}
 --- !u!1 &1695348059
 GameObject:

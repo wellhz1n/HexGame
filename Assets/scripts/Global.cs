@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Global 
+public  class Global
 {
     public static int Score = 0;
     public static bool paused = false;
     public static AudioSource a;
+    public static int Bestscr = 0;
+    public  static int Dinheiro = 0; 
+    public  int BestScore = 0;
+    public  int Money = 0;
+
     public static void Mostrar(GameObject[] c)
     {
         foreach (GameObject g in c)
@@ -25,7 +30,6 @@ public class Global
         }
     }
 
-
     public static void Stop(GameObject[] c)
     {
         a.Pause();
@@ -36,13 +40,4 @@ public class Global
 
 
     }
-  
-
-}
-[System.Serializable]
-public class SaveClass
-{
-    public static  int BestScore = 0;
-    public  static int Money = 0;
- 
 }
