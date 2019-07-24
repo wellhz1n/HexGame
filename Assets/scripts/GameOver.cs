@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI score;
     public TextMeshProUGUI hscore;
+    public TextMeshProUGUI money;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +16,16 @@ public class GameOver : MonoBehaviour
 
         score.text = Global.Score.ToString();
         hscore.text = Global.Bestscr < Global.Score ? Global.Score.ToString() : Global.Bestscr.ToString();
+        money.text = (Global.Dinheiro += Global.Score).ToString();
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         score.text = Global.Score.ToString();
-
         hscore.text = Global.Bestscr < Global.Score ? Global.Score.ToString() : Global.Bestscr.ToString();
+        money.text = (Global.Dinheiro += Global.Score).ToString();
 
 
     }
