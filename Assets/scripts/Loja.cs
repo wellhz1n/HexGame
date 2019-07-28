@@ -21,7 +21,6 @@ public class Loja : MonoBehaviour
     void Start()
     {
         Carregaconf();
-        menu.CarregaConfPublic();
 
 
         itens = Save.LoadGameList<Produtos>("Shop");
