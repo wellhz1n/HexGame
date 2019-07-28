@@ -7,6 +7,7 @@ public class Produtos
 {
     public string Cor;
     public int value;
+    public bool comprado = false;
     public Produtos(string cor,int valor)
     {
         Cor = cor;
