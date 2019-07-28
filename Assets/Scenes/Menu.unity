@@ -753,6 +753,7 @@ MonoBehaviour:
   - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 21300000, guid: eff71703beec39545ae59a8106bbb4c1, type: 3}
   prefab: {fileID: 2815079754849515051, guid: d092f9eedadfa4a42ad9042b9611c028, type: 3}
+  menu: {fileID: 0}
 --- !u!1 &703184697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1166,7 @@ MonoBehaviour:
     m_Top: 41
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 134
+  m_Spacing: 140
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

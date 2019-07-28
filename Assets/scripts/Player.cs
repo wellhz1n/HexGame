@@ -6,17 +6,36 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float vel = 10f;
-
+    public SpriteRenderer sr;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        sr.color = CorShop(Global.Cor);
 
+    }
 
-
-
+    private static Color CorShop(string cor)
+    {
+        Color c = new Color();
+        switch (cor)
+        {
+            case "Blue":
+                c = Color.blue;
+                break;
+            case "Green":
+                c = Color.green;
+                break;
+            case "Red":
+                c = Color.red;
+                break;
+            case "Yellow":
+                c = Color.yellow;
+                break;
+        }
+        return c;
     }
 
 

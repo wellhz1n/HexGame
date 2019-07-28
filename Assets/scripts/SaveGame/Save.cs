@@ -20,6 +20,17 @@ public static class Save
         f.Close();
 
     }
+    public static void SaveGameList<T>(List<T> obj, string name)
+    {
+        string named = name ?? "Temp";
+        string caminho = Application.persistentDataPath + "/" + named +".well";
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream f = new FileStream(caminho, FileMode.Create);
+
+        formatter.Serialize(f, obj);
+        f.Close();
+
+    }
     public static T LoadGame<T>(string name)
     {
         string named = name ?? "Temp";
@@ -33,6 +44,26 @@ public static class Save
             using (FileStream f = new FileStream(caminho, FileMode.Open))
             {
                 classe = (T)formatter.Deserialize(f);
+            }
+        }
+        else
+            Debug.LogWarning($"Arquivo {name} não existe no caminho {caminho}");
+
+        return classe;
+    }
+    public static List<T> LoadGameList<T>(string name)
+    {
+        string named = name ?? "Temp";
+        string caminho = Application.persistentDataPath + "/" + named + ".well";
+        List<T> classe = default(List<T>);
+        if (File.Exists(caminho))
+        {
+
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            using (FileStream f = new FileStream(caminho, FileMode.Open))
+            {
+                classe = (List<T>)formatter.Deserialize(f);
             }
         }
         else

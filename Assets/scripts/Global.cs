@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public  class Global
 {
     public static int Score = 0;
+    public static string Cor;
     public static bool paused = false;
     public static AudioSource a;
     public static int Bestscr = 0;

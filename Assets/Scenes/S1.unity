@@ -1137,6 +1137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 20
+  sr: {fileID: 797929680}
 --- !u!58 &797929684
 CircleCollider2D:
   m_ObjectHideFlags: 0

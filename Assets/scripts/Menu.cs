@@ -68,6 +68,37 @@ public class Menu : MonoBehaviour
         
     }
 
+    public   void CarregaConfPublic()
+    {
+        glob = new Global();
+        best = Save.LoadGame<SaveClass>("Gamesettings");
+        glob.BestScore = best.BestScore;
+        glob.Money = best.Money;
+        Global.Bestscr = glob.BestScore;
+        Global.Dinheiro = glob.Money;
+        if (Bestscore != null)
+        {
+
+
+            Bestscore.text = Global.Bestscr.ToString();
+        }
+        else
+        {
+            Debug.Log("Sem Best TExt");
+        }
+        if (Money != null)
+            Money.text = Global.Dinheiro.ToString();
+        else
+            Debug.Log("Sem  Dinheiro Text");
+        if (MoneyLoja != null)
+            MoneyLoja.text = Global.Dinheiro.ToString();
+        else
+            Debug.Log("Sem  Dinheiro Text");
+
+
+
+    }
+
     public void CarregaFase(string fase)
     {
         Time.timeScale = 1;
